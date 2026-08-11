@@ -1,13 +1,14 @@
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from google import genai    
 
 # 1. Configuración de tu llave
-i_llave_secreta = os.getenv("API_KEY_NEXO")
+mi_llave_secreta = os.getenv("API_KEY_NEXO")
 
 # Inicializamos el cliente de Google GenAI
-client = genai.Client(api_key=GOOGLE_API_KEY)
+client = genai.Client(api_key=mi_llave_secreta)
 
 app = FastAPI()
 
