@@ -47,7 +47,7 @@ async def analizar_ansiedad(datos: DatosEjercicio):
         )
         
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-1.5-flash',
             contents=prompt
         )
         
@@ -68,7 +68,7 @@ async def analizar_ansiedad(datos: DatosEjercicio):
 async def chat_terapeuta(datos: DatosTexto):
     try:
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-1.5-flash',
             contents=f"Eres un terapeuta empático, cálido y breve: {datos.mensaje_usuario}"
         )
         return {"asistente_dice": response.text.strip()}
@@ -82,7 +82,7 @@ async def chat_terapeuta(datos: DatosTexto):
 async def diario_desahogo(datos: DatosTexto):
     try:
         response = client.models.generate_content(
-            model='gemini-2.5-flash',
+            model='gemini-1.5-flash',
             contents=f"El usuario se está desahogando. Dile algo breve y validador: {datos.mensaje_usuario}"
         )
         return {"asistente_dice": response.text.strip()}
