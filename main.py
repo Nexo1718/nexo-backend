@@ -23,7 +23,7 @@ app.add_middleware(
 class DatosTexto(BaseModel):
     mensaje_usuario: str
 
-@app.post("/chat_ia")
+@app.post("/analizar")
 async def chat_terapeuta(datos: DatosTexto):
     try:
         # Llamada directa y sencilla a Gemini
